@@ -1,0 +1,1 @@
+https://new-project-1ffb7.firebaseapp.com/__/auth/handler
