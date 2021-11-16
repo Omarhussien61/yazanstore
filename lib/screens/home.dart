@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_pos/model/app-config.dart';
 import 'package:flutter_pos/model/car_type.dart';
 import 'package:flutter_pos/model/gallery_model.dart';
 import 'package:flutter_pos/model/product_model.dart';
+import 'package:flutter_pos/screens/main_home/subcategory.dart';
 import 'package:flutter_pos/screens/product/products_page.dart';
 import 'package:flutter_pos/service/api.dart';
 import 'package:flutter_pos/utils/Provider/ServiceData.dart';
@@ -187,7 +189,138 @@ class _HomePageState extends State<HomePage> {
                               SizedBox(
                                 child: buildHomeMenuRow(context),
                               ),
+                              ProductListTitleBar(
+                                themeColor: themeColor,
+                                title: getTransrlate(
+                                    context, 'featured_categories'),
+                                description: "",
+                                url: 'urgentDeals',
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              provider_data.categories == null
+                                  ? Container()
+                                  : Container(
+                                      height: ScreenUtil.getHeight(context) / 8,
+                                      child: ListView.builder(
+                                          scrollDirection: Axis.horizontal,
+                                          padding: EdgeInsets.all(1),
+                                          itemCount:
+                                              provider_data.categories.length,
+                                          itemBuilder: (BuildContext context,
+                                              int index) {
+                                            return InkWell(
+                                              onTap: () {
+                                                provider_data.categories[index]
+                                                            .id !=
+                                                        20
+                                                    ? Nav.route(
+                                                        context,
+                                                        Products_Page(
+                                                          id: provider_data
+                                                              .categories[index]
+                                                              .id,
+                                                          name: themeColor
+                                                                      .getlocal() ==
+                                                                  'ar'
+                                                              ? provider_data
+                                                                  .categories[
+                                                                      index]
+                                                                  .nameAr
+                                                              : provider_data
+                                                                  .categories[
+                                                                      index]
+                                                                  .name,
+                                                          Url:
+                                                              "products/category/${provider_data.categories[index].id}",
+                                                        ))
+                                                    : Nav.route(
+                                                        context,
+                                                        Subcategory(
+                                                          themeColor.getlocal() ==
+                                                                  'ar'
+                                                              ? provider_data
+                                                                  .categories[
+                                                                      index]
+                                                                  .nameAr
+                                                              : provider_data
+                                                                  .categories[
+                                                                      index]
+                                                                  .name,
+                                                          provider_data
+                                                              .categories[index]
+                                                              .subs,
+                                                        ));
+                                              },
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(4.0),
+                                                child: Column(
+                                                  // mainAxisAlignment: MainAxisAlignment.start,
+                                                  // crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              2.0),
+                                                      child: CachedNetworkImage(
+                                                        width:
+                                                            ScreenUtil.getWidth(
+                                                                    context) /
+                                                                3.5,
+                                                        height: ScreenUtil
+                                                                .getHeight(
+                                                                    context) /
+                                                            20,
+                                                        imageUrl:
+                                                            "${AppConfig.BASE_PATH}categories/${provider_data.categories[index].photo}",
+                                                        errorWidget: (context,
+                                                                url, error) =>
+                                                            Image.asset(
+                                                          "assets/load.gif",
+                                                        ),
+                                                        fit: BoxFit.contain,
+                                                      ),
+                                                    ),
+                                                    Align(
+                                                      alignment: Alignment
+                                                          .bottomCenter,
+                                                      child: Container(
+                                                        width:
+                                                            ScreenUtil.getWidth(
+                                                                    context) /
+                                                                3.5,
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(2.0),
+                                                          child: Center(
+                                                            child: Text(
+                                                              "${themeColor.getlocal() == 'ar' ? provider_data.categories[index].nameAr : provider_data.categories[index].name}",
+                                                              maxLines: 1,
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
 
+                                                    // Padding(
+                                                    //   padding: const EdgeInsets.only(top: 8),
+                                                    //   child: Container(
+                                                    //     height: 1,
+                                                    //     color: Colors.black12,
+                                                    //   ),
+                                                    // )
+                                                  ],
+                                                ),
+                                              ),
+                                            );
+                                          }),
+                                    ),
                               SizedBox(
                                 child: SizedBox(
                                   height: ScreenUtil.setHeight(context, .01),
@@ -212,7 +345,7 @@ class _HomePageState extends State<HomePage> {
                                                     context, 'showAll'),
                                                 url: 'urgentDeals',
                                               ),
-                                              list_product(themeColor,
+                                              hList(themeColor,
                                                   provider_data.product),
                                             ],
                                           ),
@@ -270,7 +403,7 @@ class _HomePageState extends State<HomePage> {
                                                     context, 'showAll'),
                                                 url: 'bestProducts',
                                               ),
-                                              list_product(themeColor,
+                                              hList(themeColor,
                                                   provider_data.bestProducts),
                                             ],
                                           ),
@@ -321,12 +454,12 @@ class _HomePageState extends State<HomePage> {
                                               ProductListTitleBar(
                                                 themeColor: themeColor,
                                                 title: getTransrlate(
-                                                    context, 'today_deals'),
+                                                    context, 'vip_products'),
                                                 description: getTransrlate(
                                                     context, 'showAll'),
-                                                url: 'MazadProducts',
+                                                url: 'vendor-vip-products',
                                               ),
-                                              list_product(
+                                              hList(
                                                   themeColor,
                                                   provider_data
                                                       .productMostSale),
@@ -346,7 +479,7 @@ class _HomePageState extends State<HomePage> {
                               //     ? Container()
                               //     : provider_data.productvip.isEmpty
                               //         ? Container()
-                              //         : list_product(
+                              //         : hList(
                               //             themeColor, provider_data.productvip),
                               SizedBox(
                                 height: 25,
@@ -568,21 +701,26 @@ class _HomePageState extends State<HomePage> {
     return product.isEmpty
         ? Container()
         : SizedBox(
-            height: ScreenUtil.setHeight(context, .2),
-            child: ListView(
+            height: ScreenUtil.setHeight(context, .45),
+
+            //width: ScreenUtil.getWidth(context),
+            child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              children: product
-                  .map((e) => Center(
-                        child: Padding(
-                          padding: const EdgeInsets.only(right: 4, bottom: 4),
-                          child: ProductCard(
-                            themeColor: themeColor,
-                            product: e,
-                          ),
-                        ),
-                      ))
-                  .toList(),
+              itemCount: product.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 4, bottom: 4),
+                    child: Container(
+                      width: ScreenUtil.getWidth(context) / 2.2,
+                      child: ProductCard(
+                        themeColor: themeColor,
+                        product: product[index],
+                      ),
+                    ),
+                  ),
+                );
+              },
             ),
           );
   }
