@@ -739,7 +739,7 @@ class _ProductPageState extends State<ProductPage> {
                                                     color: Colors.white,
                                                     fontSize:
                                                         ScreenUtil.getTxtSz(
-                                                            context, 15))),
+                                                            context, 12))),
                                           ],
                                         )),
                                     SizedBox(
@@ -827,7 +827,7 @@ class _ProductPageState extends State<ProductPage> {
                                                     color: Colors.white,
                                                     fontSize:
                                                         ScreenUtil.getTxtSz(
-                                                            context, 15))),
+                                                            context, 12))),
                                           ],
                                         )),
                                     SizedBox(
