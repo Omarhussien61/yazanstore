@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:710662489660:android:a52698815d34fdb4f82539",
         "android_client_info": {
-          "package_name": "com.bestgator.yazan"
+          "package_name": "com.yazanstore.app"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "710662489660-4l4m0tau0t9j5m0ki95b6ts91dj0shgt.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.bestgator.yazan",
+            "package_name": "com.yazanstore.app",
             "certificate_hash": "8d390d1d32b039371030303177b1cd8d8b0d23d3"
           }
         },

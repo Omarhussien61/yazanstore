@@ -142,13 +142,13 @@ class _AccountState extends State<Account> {
                                                             FontWeight.bold,
                                                         fontSize:
                                                             ScreenUtil.getTxtSz(
-                                                                context, 14),
+                                                                context, 10),
                                                       )),
                                                 ),
                                               ),
                                               Padding(
                                                 padding:
-                                                    const EdgeInsets.all(12.0),
+                                                    const EdgeInsets.all(8.0),
                                                 child: SvgPicture.asset(
                                                   "assets/icons/1611137442over.6dc8070d.svg",
                                                   height: ScreenUtil.setHeight(
@@ -183,13 +183,13 @@ class _AccountState extends State<Account> {
                                                             FontWeight.bold,
                                                         fontSize:
                                                             ScreenUtil.getTxtSz(
-                                                                context, 14),
+                                                                context, 10),
                                                       )),
                                                 ),
                                               ),
                                               Padding(
                                                 padding:
-                                                    const EdgeInsets.all(12.0),
+                                                    const EdgeInsets.all(8.0),
                                                 child: SvgPicture.asset(
                                                   "assets/icons/1611137475over2.143c236a.svg",
                                                   height: ScreenUtil.setHeight(
@@ -224,13 +224,13 @@ class _AccountState extends State<Account> {
                                                             FontWeight.bold,
                                                         fontSize:
                                                             ScreenUtil.getTxtSz(
-                                                                context, 14),
+                                                                context, 10),
                                                       )),
                                                 ),
                                               ),
                                               Padding(
                                                 padding:
-                                                    const EdgeInsets.all(12.0),
+                                                    const EdgeInsets.all(8.0),
                                                 child: SvgPicture.asset(
                                                   "assets/icons/1611137512over3.c14b4620.svg",
                                                   color: themeColor.getColor(),
@@ -265,13 +265,13 @@ class _AccountState extends State<Account> {
                                                             FontWeight.bold,
                                                         fontSize:
                                                             ScreenUtil.getTxtSz(
-                                                                context, 14),
+                                                                context, 10),
                                                       )),
                                                 ),
                                               ),
                                               Padding(
                                                 padding:
-                                                    const EdgeInsets.all(12.0),
+                                                    const EdgeInsets.all(8.0),
                                                 child: SvgPicture.asset(
                                                   "assets/icons/1611137556over4.350c9104.svg",
                                                   height: ScreenUtil.setHeight(

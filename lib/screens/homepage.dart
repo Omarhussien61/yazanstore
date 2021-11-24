@@ -60,13 +60,20 @@ class _HomeState extends State<Home> {
           onPressed: () {},
           tooltip: "start FAB",
           child: Container(
-              margin: EdgeInsets.all(8.0),
-              child: IconButton(
-                  icon: new Image.asset('assets/images/logo.png'),
-                  tooltip: 'Action',
-                  onPressed: () {
-                    Nav.route(context, Gallaries());
-                  })),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                    color: themeColor.getColor(), width: 1)),
+            child: Container(
+                margin: EdgeInsets.all(4.0),
+
+                child: IconButton(
+                    icon: new Image.asset('assets/images/logo.png'),
+                    tooltip: 'Action',
+                    onPressed: () {
+                      Nav.route(context, Gallaries());
+                    })),
+          ),
           elevation: 0.0,
         ),
       ),

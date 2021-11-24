@@ -7,8 +7,6 @@ import 'package:flutter_pos/screens/splash_screen.dart';
 import 'package:flutter_pos/utils/Provider/ServiceData.dart';
 import 'package:flutter_pos/utils/Provider/provider.dart';
 import 'package:flutter_pos/utils/local/AppLocalizations.dart';
-import 'package:flutter_pos/utils/screen_size.dart';
-import 'package:flutter_pos/widget/count_down_time.dart';
 import 'package:global_configuration/global_configuration.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -40,7 +38,6 @@ Future<void> main() async {
           ),
         )));
   });
-
   // await SentryFlutter.init(
   //
   //       (options) {
@@ -57,7 +54,6 @@ Future<void> main() async {
   //
   // );
 }
-
 class MyApp extends StatefulWidget {
   static void setlocal(BuildContext context, Locale locale) {
     _MyAppState state = context.findAncestorStateOfType<_MyAppState>();
@@ -67,7 +63,6 @@ class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
-
 class _MyAppState extends State<MyApp> {
   Locale _locale;
   final GlobalKey<NavigatorState> navigatorKey =

@@ -245,7 +245,7 @@ class _ProductCardState extends State<ProductCard> {
                                             style: TextStyle(
                                                 color: Colors.white,
                                                 fontSize: ScreenUtil.getTxtSz(
-                                                    context, 12))),
+                                                    context, 10))),
                                       ],
                                     )),
                               ),

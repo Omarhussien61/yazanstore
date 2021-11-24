@@ -1,4 +1,4 @@
-package com.bestgator.yazan;
+package com.yazanstore.app;
 
 import io.flutter.embedding.android.FlutterActivity;
 
