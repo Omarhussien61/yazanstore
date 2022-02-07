@@ -7,13 +7,17 @@ class Provider_control with ChangeNotifier {
   int car_type = 1;
   Color color;
   bool isLogin = false;
-
+  String currency;
   String aboutUs;
   String privacy;
   String terms;
 
   setAboutUs(String data) {
     aboutUs = data;
+    notifyListeners();
+  }
+  setCurrency(String data) {
+    currency = data;
     notifyListeners();
   }
 
@@ -39,13 +43,13 @@ class Provider_control with ChangeNotifier {
   getcar_type() => car_type;
   getlocal() => local;
 
-  setCar_made(String Car_made) async {
-    car_made = Car_made;
+  setCar_made(String CarMade) async {
+    car_made = CarMade;
     notifyListeners();
   }
 
-  setCar_type(int Car_type) async {
-    car_type = Car_type;
+  setCar_type(int CarType) async {
+    car_type = CarType;
     notifyListeners();
   }
 

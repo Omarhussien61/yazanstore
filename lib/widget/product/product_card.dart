@@ -62,7 +62,6 @@ class _ProductCardState extends State<ProductCard> {
   Widget build(BuildContext context) {
     final themeColor = Provider.of<Provider_control>(context);
     final themeData = Provider.of<Provider_Data>(context);
-
     print((MediaQuery.of(context).size.width - 48) / 2);
     return Stack(
       children: [
@@ -105,7 +104,6 @@ class _ProductCardState extends State<ProductCard> {
                     Container(
                         width: double.infinity,
                         //height: 158,
-
                         height: ScreenUtil.setHeight(context, .15),
                         child: ClipRRect(
                             clipBehavior: Clip.hardEdge,
@@ -114,8 +112,7 @@ class _ProductCardState extends State<ProductCard> {
                             child: FadeInImage.assetNetwork(
                               placeholder: 'assets/load.gif',
                               placeholderCacheHeight: 20,
-                              image:
-                                  "${AppConfig.BASE_PATH}products/${widget.product.photo}",
+                              image: "${AppConfig.BASE_PATH}products/${widget.product.photo}",
                               fit: BoxFit.contain,
                             ))),
                     Padding(
@@ -133,13 +130,13 @@ class _ProductCardState extends State<ProductCard> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(16, 4, 16, 16),
+                      padding: EdgeInsets.fromLTRB(16, 2, 16, 2),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Expanded(
                             child: Text(
-                              "${widget.product.price} ${getTransrlate(context, 'Currency')}",
+                              "${widget.product.price} ${themeColor.currency}",
                               overflow: TextOverflow.ellipsis,
                               maxLines: 1,
                               style: TextStyle(

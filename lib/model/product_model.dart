@@ -13,6 +13,7 @@ class ProductModel {
 
   factory ProductModel.fromJson(List json) => ProductModel(
         products: List<Product>.from(json.map((x) => Product.fromJson(x))),
+
         //  meta: json["meta"] == null ? null : Meta.fromJson(json["meta"]),
         success: true,
         status: 200,
@@ -56,7 +57,7 @@ class Product {
   String _views;
   String _tags;
   String _features;
-  List<String> _colors;
+  List<dynamic> _colors;
   List<String> _galleries;
   String _productCondition;
   dynamic _ship;
@@ -382,7 +383,8 @@ class Product {
     _createdAt = json["created_at"];
     _updatedAt = json["updated_at"];
     _isDiscount = json["is_discount"];
-    _discountDate = json["discount_date"];
+    _discountDate = json["discount_date"].toString().replaceAll("-", '');
+    print("_discountDate = ${_discountDate} ${json["discount_date"]}");
     //_wholeSellQty = json["whole_sell_qty"];
     //_wholeSellDiscount = json["whole_sell_discount"];
     _isCatalog = json["is_catalog"];

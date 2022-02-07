@@ -179,7 +179,7 @@ class _WishListState extends State<WishList> {
                                                               .fromLTRB(
                                                                   16, 4, 16, 0),
                                                           child: Text(
-                                                            "${wishList[index].product.price} ${getTransrlate(context, 'Currency')}",
+                                                            "${wishList[index].product.price} ${themeColor.currency}",
                                                             textAlign:
                                                                 TextAlign.left,
                                                             overflow:

@@ -262,7 +262,7 @@ class _MazadProductState extends State<MazadProduct> {
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Text(
-                                        "${widget.product.price} ${getTransrlate(context, 'Currency')} ",
+                                        "${widget.product.price} ${themeColor.currency} ",
                                         style: TextStyle(
                                             fontSize: ScreenUtil.getTxtSz(
                                                 context, 18),
@@ -277,7 +277,7 @@ class _MazadProductState extends State<MazadProduct> {
                                         : Padding(
                                             padding: const EdgeInsets.all(8.0),
                                             child: Text(
-                                              "${widget.product.previousPrice} ${getTransrlate(context, 'Currency')} ",
+                                              "${widget.product.previousPrice} ${themeColor.currency} ",
                                               style: TextStyle(
                                                   fontSize: ScreenUtil.getTxtSz(
                                                       context, 15),
@@ -558,7 +558,7 @@ class _MazadProductState extends State<MazadProduct> {
                                                       width: 10,
                                                     ),
                                                     Text(
-                                                      "${mazadOffers[index].price} ${getTransrlate(context, 'Currency')} ",
+                                                      "${mazadOffers[index].price} ${themeColor.currency} ",
                                                       style: TextStyle(
                                                           fontSize: ScreenUtil
                                                               .getTxtSz(

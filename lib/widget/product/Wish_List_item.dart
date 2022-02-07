@@ -106,7 +106,7 @@
 //                           Container(
 //                             width: ScreenUtil.getWidth(context) / 5,
 //                             child: AutoSizeText(
-//                               "${widget.product.product_price} ${getTransrlate(context, 'Currency')} ",
+//                               "${widget.product.product_price} ${themeColor.currency} ",
 //                               maxLines: 1,
 //                               minFontSize: 14,
 //                               maxFontSize: 16,

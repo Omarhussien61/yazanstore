@@ -277,7 +277,6 @@ class _LoginPageState extends State<LoginPage> {
     final facebookLogin = FacebookLogin();
     facebookLogin.logOut();
     final result = await facebookLogin.logIn(["public_profile", "email"]);
-    print(result.accessToken.permissions);
     switch (result.status) {
       case FacebookLoginStatus.loggedIn:
         final token = result.accessToken.token;

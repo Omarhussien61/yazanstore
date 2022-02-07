@@ -212,7 +212,7 @@ class _ProductCartState extends State<ProductCart> {
                                   child: AutoSizeText(
                                     widget.carts.product == null
                                         ? ''
-                                        : " ${double.parse(widget.carts.product.price) + widget.carts.Size_price} ${getTransrlate(context, 'Currency')}",
+                                        : " ${double.parse(widget.carts.product.price) + widget.carts.Size_price} ${themeColor.currency}",
                                     maxLines: 1,
                                     minFontSize: 14,
                                     style: TextStyle(
@@ -245,7 +245,7 @@ class _ProductCartState extends State<ProductCart> {
                                   child: AutoSizeText(
                                     widget.carts.product == null
                                         ? ''
-                                        : " ${double.parse(widget.carts.product.price) * widget.carts.quantity + widget.carts.Size_price} ${getTransrlate(context, 'Currency')}",
+                                        : " ${double.parse(widget.carts.product.price) * widget.carts.quantity + widget.carts.Size_price} ${themeColor.currency}",
                                     maxLines: 1,
                                     minFontSize: 14,
                                     style: TextStyle(

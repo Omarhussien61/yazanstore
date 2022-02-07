@@ -818,7 +818,7 @@ class _OrderPageState extends State<OrderPage> {
   //                       color: Color(0xFF5D6A78)),
   //                 ),
   //                 Text(
-  //                   "${getTransrlate(context, 'price')} : ${caption.price}  ${getTransrlate(context, 'Currency')}",
+  //                   "${getTransrlate(context, 'price')} : ${caption.price}  ${themeColor.currency}",
   //                   style: TextStyle(
   //                       fontSize: 10,
   //                       fontWeight: FontWeight.w600,
@@ -922,7 +922,7 @@ class _OrderPageState extends State<OrderPage> {
                         color: Color(0xFF5D6A78)),
                   ),
                   Text(
-                    "${getTransrlate(context, 'price')} : ${caption.price}  ${getTransrlate(context, 'Currency')}",
+                    "${getTransrlate(context, 'price')} : ${caption.price}  ${themeColor.currency}",
                     style: TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.w600,

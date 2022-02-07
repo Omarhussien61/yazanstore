@@ -191,7 +191,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                           child: Text(
                                             _finalorder.couponDiscount
                                                     .toString() +
-                                                " ${getTransrlate(context, 'Currency')}",
+                                                " ${themeColor.currency}",
                                             style: TextStyle(
                                                 color: Colors.black,
                                                 fontWeight: FontWeight.bold,
@@ -217,7 +217,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                     child: Text(
                                       "${data.total}" +
                                           '  ' +
-                                          "${getTransrlate(context, 'Currency')}",
+                                          "${themeColor.currency}",
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold,
@@ -243,7 +243,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                     child: Text(
                                       _finalorder.shippingCost.toString() +
                                           '  ' +
-                                          "${getTransrlate(context, 'Currency')}",
+                                          "${themeColor.currency}",
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold,
@@ -268,7 +268,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                     padding: const EdgeInsets.only(top: 20.0),
                                     child: Text(
                                       '${_finalorder.couponDiscount ?? 0}' +
-                                          "${getTransrlate(context, 'Currency')}",
+                                          "${themeColor.currency}",
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold,
@@ -294,7 +294,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                     child: Text(
                                       _finalorder.packingCost.toString() +
                                           '  ' +
-                                          "${getTransrlate(context, 'Currency')}",
+                                          "${themeColor.currency}",
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold,
@@ -319,7 +319,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                     padding: const EdgeInsets.only(top: 20.0),
                                     child: Text(
                                       _finalorder.tax.toString() +
-                                          '${getTransrlate(context, 'Currency')}',
+                                          '${themeColor.currency}',
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold,
@@ -345,7 +345,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                     child: Text(
                                       _finalorder.payAmount.toString() +
                                           '  ' +
-                                          "${getTransrlate(context, 'Currency')}",
+                                          "${themeColor.currency}",
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold,

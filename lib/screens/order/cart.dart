@@ -246,7 +246,7 @@ class _CartScreenState extends State<CartScreen> {
                                                             Container(
                                                               child:
                                                                   AutoSizeText(
-                                                                " ${getTransrlate(context, 'Currency')}",
+                                                                " ${themeColor.currency}",
                                                                 maxLines: 1,
                                                                 minFontSize: 20,
                                                                 maxFontSize: 25,

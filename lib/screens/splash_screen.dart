@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_pos/model/app-config.dart';
 import 'package:flutter_pos/screens/homepage.dart';
+import 'package:flutter_pos/service/api.dart';
 import 'package:flutter_pos/utils/Provider/ServiceData.dart';
 import 'package:flutter_pos/utils/Provider/provider.dart';
 import 'package:flutter_pos/utils/navigator.dart';
@@ -25,6 +26,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
+
     Timer(Duration(seconds: 3), () => _auth());
   }
 
@@ -77,6 +79,10 @@ class _SplashScreenState extends State<SplashScreen>
 
   void _auth() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
+    API(context).get("currency").then((value){
+      prefs.setString('currency', value['data']['name']);
+      themeColor.setCurrency(value['data']['sign']);
+    });
     if (prefs.getInt("user_id") != null) {
       print(prefs.getInt("user_id"));
       themeColor.setLogin(true);

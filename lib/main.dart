@@ -64,9 +64,9 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 class _MyAppState extends State<MyApp> {
+
   Locale _locale;
-  final GlobalKey<NavigatorState> navigatorKey =
-      new GlobalKey<NavigatorState>();
+  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
   void setlocal(Locale locale) {
     setState(() {

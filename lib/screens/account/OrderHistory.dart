@@ -183,7 +183,7 @@ class _OrderHistoryState extends State<OrderHistory> {
                                 Container(
                                     width: ScreenUtil.getWidth(context) / 1.5,
                                     child: AutoSizeText(
-                                      '${getTransrlate(context, 'total')}  : ${orders[index].payAmount} ${getTransrlate(context, 'Currency')}',
+                                      '${getTransrlate(context, 'total')}  : ${orders[index].payAmount} ${themeColor.currency}',
                                       maxLines: 1,
                                     )),
                                 SizedBox(

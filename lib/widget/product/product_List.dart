@@ -37,6 +37,7 @@ class _ProductListState extends State<ProductList> {
   @override
   Widget build(BuildContext context) {
     final data = Provider.of<Provider_Data>(context);
+    final themeColor = Provider.of<Provider_control>(context);
 
     return Stack(
       children: <Widget>[
@@ -116,7 +117,7 @@ class _ProductListState extends State<ProductList> {
                               Container(
                                   width: ScreenUtil.getWidth(context) / 3,
                                   child: AutoSizeText(
-                                    "${widget.product.price} ${getTransrlate(context, 'Currency')} ",
+                                    "${widget.product.price} ${themeColor.currency} ",
                                     maxLines: 1,
                                     minFontSize: 14,
                                     maxFontSize: 16,

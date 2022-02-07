@@ -8,12 +8,14 @@ import 'package:flutter_pos/model/order_model.dart';
 import 'package:flutter_pos/model/ticket.dart';
 import 'package:flutter_pos/screens/order/CreateTickits.dart';
 import 'package:flutter_pos/service/api.dart';
+import 'package:flutter_pos/utils/Provider/provider.dart';
 import 'package:flutter_pos/utils/local/LanguageTranslated.dart';
 import 'package:flutter_pos/utils/navigator.dart';
 import 'package:flutter_pos/utils/screen_size.dart';
 import 'package:flutter_pos/widget/ResultOverlay.dart';
 import 'package:flutter_pos/widget/custom_loading.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Orderdetails extends StatefulWidget {
@@ -33,6 +35,8 @@ class _OrderdetailsState extends State<Orderdetails> {
 
   @override
   Widget build(BuildContext context) {
+    final themeColor = Provider.of<Provider_control>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -250,7 +254,7 @@ class _OrderdetailsState extends State<Orderdetails> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    '${getTransrlate(context, 'total_product')} : ${widget.order.totalQty ?? '0'} ${getTransrlate(context, 'Currency')} ',
+                    '${getTransrlate(context, 'total_product')} : ${widget.order.totalQty ?? '0'} ${themeColor.currency} ',
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                   ),
 
